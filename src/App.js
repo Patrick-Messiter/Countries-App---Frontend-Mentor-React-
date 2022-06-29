@@ -49,6 +49,7 @@ function App() {
   function renderSectionComponent () {
     return (
       <Section
+        countryData = {countryData}
         item = {chooseCountry}
         setChooseCountry = {setChooseCountry}
         toggle = {toggle} 

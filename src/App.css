@@ -50,3 +50,30 @@
   height: 12rem;
   border-radius: 10px 10px 0 0;
 }
+
+
+
+/* Country Side Page Section */
+
+.Country-section {
+  height: 80%;
+  width: 90%;
+}
+
+.Country-section-container {
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  gap: 5%;
+  height: 40%;
+  width: 100%;
+}
+
+.Country-section-container img {
+  grid-column: 1 / 1;
+  height: 100%;
+  width: 100%;
+}
+
+.Country-section-container-inner {
+  grid-column: 2/2;
+}

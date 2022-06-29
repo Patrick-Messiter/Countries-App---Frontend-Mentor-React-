@@ -26,22 +26,6 @@ function Main (props) {
 
     // Render API to Card once API has been fetched dependent upon search conditions
 
-    // Render all countries
-
-    /*
-    const renderSelectedContinent = props.countryData.map(currentCountry => {
-        
-        if (formData.regionName === currentCountry.region) {
-            return (
-                <Card
-                    key = {currentCountry.name.common}
-                    item = {currentCountry}
-                    selectCard = {() => selectCard(currentCountry.name.common)}
-                />
-            )
-        }
-    }) */
-
     // Render Countries to the Card component with conditional rendering included for form requirements
 
     const renderSearchedCountry = props.countryData.map(currentCountry => {
