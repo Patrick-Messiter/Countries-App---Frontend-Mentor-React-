@@ -76,4 +76,47 @@
 
 .Country-section-container-inner {
   grid-column: 2/2;
+  display: grid;
+  grid-template-columns: repeat(2 1fr);
+  grid-template-rows: 1fr 2fr 1fr;
+  align-items: start;
+  justify-items: start;
+  line-height: 1.6rem;
+}
+
+.Country-section-container-inner ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.Country-section-container-inner span {
+  font-weight: bold;
+}
+
+.Country-section-container-inner-leftlist {
+  grid-area: 2 / 1 / span 1 / 1;
+}
+
+.Country-section-container-inner-rightlist {
+  grid-area: 2 / 2 / span 1 / span 1;
+}
+
+.Country-section-container-inner-bottom {
+  grid-area: 3 / 1 / span 1 / span 2;
+  display: flex;
+}
+
+.Country-section-container-inner-bottom button {
+  background-color: white;
+  padding: 0.2rem 1rem;
+  color: gray;
+  border: 0.15rem groove rgba(0, 0, 0, 0.1);
+  border-radius: 0.1rem;
+  margin-left: 0.3rem;
+}
+
+.Country-section-container-inner-bottom button:hover {
+  border: 0.15rem groove rgba(0, 0, 0, 0.4);
+  color: black;
 }

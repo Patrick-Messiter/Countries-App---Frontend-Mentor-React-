@@ -24,6 +24,12 @@ function Section (props) {
         return languagesArray.length - 1 === i ? languageString += `${language}` : languageString += `${language}, `
     })
 
+    // Formatting population data
+
+    function formatPopulation () {
+        return props.item.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }
+
     // Bordering Countries section
 
     // Function which updates the borderCountry state to include the objects for each country that borders the current selected country
@@ -68,22 +74,22 @@ function Section (props) {
                     <h1>{props.item.name.common}</h1>
                     <div className='Country-section-container-inner-leftlist'>
                         <ul>
-                            <li>{nativeNameFirst.common ? `Native Name: ${nativeNameFirst.common}` : "Nil native name"}</li>
-                            <li>Population: {props.item.population}</li>
-                            <li>Region: {props.item.region}</li>
-                            <li>Sub Region: {props.item.subregion}</li>
-                            <li>Capital: {props.item.capital}</li>
+                            <li><span>Native Name: </span>{nativeNameFirst.common ? `${nativeNameFirst.common}` : "Nil native name"}</li>
+                            <li><span>Population:</span> {formatPopulation}</li>
+                            <li><span>Region:</span> {props.item.region}</li>
+                            <li><span>Sub Region:</span> {props.item.subregion}</li>
+                            <li><span>Capital:</span> {props.item.capital}</li>
                         </ul>
                     </div>
                     <div className='Country-section-container-inner-rightlist'>
                         <ul>
-                            <li>Top Level Domain: {props.item.tld ? `${props.item.tld[0]}` : "There is nil top level domain"} </li>
-                            <li>Currencies: {currencyObjFirst.name}</li>
-                            <li>Languages: {languageString} </li>
+                            <li><span>Top Level Domain:</span> {props.item.tld ? `${props.item.tld[0]}` : "There is nil top level domain"} </li>
+                            <li><span>Currencies:</span> {currencyObjFirst.name}</li>
+                            <li><span>Languages:</span> {languageString} </li>
                         </ul>
                     </div>
-                    <div>
-                        <p>Border Countries: {borderButtons} </p>
+                    <div className='Country-section-container-inner-bottom'>
+                        <p><span>Border Countries:</span> {borderButtons} </p>
                     </div>
                 </div>
             </div>
