@@ -2,6 +2,8 @@
   font-size: 16px;
 }
 
+/* NAVBAR Section */
+
 
 .Navbar {
   width: 100%;
@@ -15,6 +17,8 @@
   left: 5%;
 }
 
+/* MAIN Section */
+
 .Main-home-section {
   height: 100%;
   width: 100%;
@@ -22,19 +26,55 @@
 }
 
 .Home-outer-container {
-  width: 80%;
-  margin-left: 10%;
+  width: 90%;
+  margin: 0 5%;
   display: flex;
   flex-direction: column;
+}
+
+.Home-form-container {
+  width: 100%;
+  height: 15vh;
+}
+
+.Form-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Form-input-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: white;
+  border-radius: 0.3rem;
+  height: 30%;
+  width: 30%;
+}
+
+.Form-input-container p {
+  display: flex;
+  grid-column: 1 / 1;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.Form-input-container input {
+  grid-column: 2 / 2;
+  border: none;
+  border-radius: 0.3rem;
+  outline: none;
 }
 
 .Home-card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 3rem;
-  align-items:center;
-  justify-content: space-evenly;
-  justify-self: center;
+  column-gap: 3rem;
+  justify-items: center;
 }
 
 .Card-container {
@@ -46,9 +86,25 @@
 }
 
 .Card-container img {
-  width: 17rem;
+  width: 100%;
   height: 12rem;
   border-radius: 10px 10px 0 0;
+}
+
+.Card-container-inner {
+  width: 80%;
+  margin: 0 10%;
+}
+
+.Card-container-inner ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8rem;
+}
+
+.Card-container-inner span {
+  font-weight: bold;
 }
 
 
@@ -56,15 +112,39 @@
 /* Country Side Page Section */
 
 .Country-section {
-  height: 80%;
+  height: 60vh;
   width: 90%;
+  margin: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.Country-section-button {
+  background-color: white;
+  padding: 0.2rem 1rem;
+  color: gray;
+  border: 0.15rem groove rgba(0, 0, 0, 0.1);
+  border-radius: 0.1rem;
+}
+
+.Country-section-button:hover {
+  border: 0.15rem groove rgba(0, 0, 0, 0.4);
+  color: black;
+}
+
+.Back-button {
+  border-radius: 0.3rem;
+  padding: 0.4rem 1.5rem;
+  color: black;
 }
 
 .Country-section-container {
   display: grid;
   grid-template-columns: 3fr 4fr;
   gap: 5%;
-  height: 40%;
+  height: 70%;
   width: 100%;
 }
 
@@ -72,6 +152,7 @@
   grid-column: 1 / 1;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .Country-section-container-inner {
@@ -79,9 +160,10 @@
   display: grid;
   grid-template-columns: repeat(2 1fr);
   grid-template-rows: 1fr 2fr 1fr;
-  align-items: start;
+  align-items: center;
   justify-items: start;
   line-height: 1.6rem;
+  margin: 0;
 }
 
 .Country-section-container-inner ul {
@@ -105,18 +187,9 @@
 .Country-section-container-inner-bottom {
   grid-area: 3 / 1 / span 1 / span 2;
   display: flex;
+  margin: 0;
 }
 
 .Country-section-container-inner-bottom button {
-  background-color: white;
-  padding: 0.2rem 1rem;
-  color: gray;
-  border: 0.15rem groove rgba(0, 0, 0, 0.1);
-  border-radius: 0.1rem;
   margin-left: 0.3rem;
-}
-
-.Country-section-container-inner-bottom button:hover {
-  border: 0.15rem groove rgba(0, 0, 0, 0.4);
-  color: black;
 }

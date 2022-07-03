@@ -1,14 +1,19 @@
 import React from 'react'
+import {formatPopulation} from './globalFunctions'
 
 function Card (props) {
     
     return (
         <div onClick={props.selectCard} className='Card-container'>
             <img src={props.item.flags.png} alt={`${props.item.name.common} flag`}/>
-            <h3>{props.item.name.common}</h3>
-            <p>Population: {props.item.population}</p>
-            <p>Region: {props.item.region}</p>
-            <p>Capital: {props.item.capital}</p>
+            <div className='Card-container-inner'>
+                <h3>{props.item.name.common}</h3>
+                <ul>
+                    <li><span>Population:</span> {formatPopulation(props.item.population)}</li>
+                    <li><span>Region:</span> {props.item.region}</li>
+                    <li><span>Capital:</span> {props.item.capital}</li>
+                </ul>
+            </div>
         </div>
     )
 }

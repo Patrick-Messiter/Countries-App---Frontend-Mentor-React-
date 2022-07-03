@@ -79,10 +79,12 @@ function Main (props) {
     return (
         <main className='Main-home-section'>
             <div className='Home-outer-container'>
-                <Form 
-                    formData = {formData}
-                    setFormData = {setFormData}
-                />
+                <div className='Home-form-container'>
+                    <Form 
+                        formData = {formData}
+                        setFormData = {setFormData}
+                    />
+                </div>
                 <div className='Home-card-container'>
                     {renderSearchedCountry}
                 </div>

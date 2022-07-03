@@ -1,4 +1,5 @@
 import React from 'react'
+import {formatPopulation} from './globalFunctions'
 
 function Section (props) {
 
@@ -23,12 +24,6 @@ function Section (props) {
     languagesArray.map((language, i, languagesArray) => {
         return languagesArray.length - 1 === i ? languageString += `${language}` : languageString += `${language}, `
     })
-
-    // Formatting population data
-
-    function formatPopulation () {
-        return props.item.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    }
 
     // Bordering Countries section
 
@@ -62,12 +57,12 @@ function Section (props) {
     // Function to map through buttons for the border countries section with an onclick event to change the chooseCountry state to that of the buttons
 
     const borderButtons = borderCountry.map(country => {
-        return <button onClick={() => props.setChooseCountry(country)} key={country.name.common}>{country.name.common}</button>
+        return <button className='Country-section-button' onClick={() => props.setChooseCountry(country)} key={country.name.common}>{country.name.common}</button>
     })
     
     return (
         <section className='Country-section'>
-            <button onClick={backToMain}>Back</button>
+            <button className='Country-section-button Back-button' onClick={backToMain}>&#8592; Back</button>
             <div className='Country-section-container'>
                 <img src = {props.item.flags.svg} alt = {`${props.item.name.common} flag`}/>
                 <div className='Country-section-container-inner'>
@@ -75,7 +70,7 @@ function Section (props) {
                     <div className='Country-section-container-inner-leftlist'>
                         <ul>
                             <li><span>Native Name: </span>{nativeNameFirst.common ? `${nativeNameFirst.common}` : "Nil native name"}</li>
-                            <li><span>Population:</span> {formatPopulation}</li>
+                            <li><span>Population:</span> {formatPopulation(props.item.population)}</li>
                             <li><span>Region:</span> {props.item.region}</li>
                             <li><span>Sub Region:</span> {props.item.subregion}</li>
                             <li><span>Capital:</span> {props.item.capital}</li>
