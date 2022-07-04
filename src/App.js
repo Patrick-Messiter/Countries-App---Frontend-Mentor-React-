@@ -8,7 +8,8 @@ function App() {
 
   const [countryData, setCountryData] = React.useState(null)
   const [chooseCountry, setChooseCountry] = React.useState()
-  const [toggle, setToggle] = React.useState(false)
+  const [toggleSection, setToggleSection] = React.useState(false)
+  const [toggleDarkMode, setToggleDarkMode] = React.useState(false)
     
 
   //Call API function
@@ -19,13 +20,13 @@ function App() {
   }
 
   console.log(countryData)
-  console.log(chooseCountry)
 
 
   //Call API useEffect conditions
   React.useEffect(() => {
       getCountryAPI()
     }, [])
+  
 
   // Render API to Main once API has been fetched
 
@@ -37,8 +38,9 @@ function App() {
           setCountryData = {setCountryData}
           chooseCountry = {chooseCountry}
           setChooseCountry = {setChooseCountry}
-          toggle = {toggle}
-          setToggle = {setToggle}
+          toggleSection = {toggleSection}
+          setToggleSection = {setToggleSection}
+          toggleDarkMode = {toggleDarkMode}
         />
       )
     }
@@ -52,16 +54,20 @@ function App() {
         countryData = {countryData}
         item = {chooseCountry}
         setChooseCountry = {setChooseCountry}
-        toggle = {toggle} 
-        setToggle = {setToggle}
+        toggleSection = {toggleSection} 
+        setToggleSection = {setToggleSection}
+        toggleDarkMode = {toggleDarkMode}
       />
     )
   }
 
   return (
     <div className="App">
-      <Navbar />
-      {toggle ? renderSectionComponent() : renderMainComponent()}
+      <Navbar
+        toggleDarkMode = {toggleDarkMode}
+        setToggleDarkMode = {setToggleDarkMode}
+       />
+      {toggleSection ? renderSectionComponent() : renderMainComponent()}
     </div>
   );
 }

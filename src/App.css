@@ -2,19 +2,50 @@
   font-size: 16px;
 }
 
+.DarkMain {
+  background-color: rgb(68, 66, 67);
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+.DarkMinor {
+  background-color: rgb(128, 128, 134);
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+.LightMain {
+  background-color: rgb(235, 235, 235);
+  color: black;
+  transition: 0.5s;
+}
+
+.LightMinor {
+  background-color: whitesmoke;
+  color: black;
+  transition: 0.5s;
+}
+
 /* NAVBAR Section */
 
 
 .Navbar {
   width: 100%;
-  height: 10%;
-  display: flex;
+  height: 10vh;
   box-shadow: 0 4px 4px -2px rgb(184, 183, 183);
 }
 
+.Navbar-inner {
+  display: flex;
+  width: 90%;
+  height: 100%;
+  margin: 0 5%;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .Navbar h1 {
-  position: relative;
-  left: 5%;
+  margin: 0;
 }
 
 /* MAIN Section */
@@ -22,7 +53,6 @@
 .Main-home-section {
   height: 100%;
   width: 100%;
-  background-color: lightgray;
 }
 
 .Home-outer-container {
@@ -48,7 +78,6 @@
 .Form-input-container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  background-color: white;
   border-radius: 0.3rem;
   height: 30%;
   width: 30%;
@@ -69,6 +98,20 @@
   outline: none;
 }
 
+.Form-select-container {
+  height: 2.5rem;
+  width: 7.5rem;
+}
+
+.Form-select-container select {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 0.3rem;
+  outline: none;
+}
+
+
 .Home-card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -82,7 +125,6 @@
   border-radius: 10px;
   height: 24rem;
   width: 17rem;
-  background-color: whitesmoke;
 }
 
 .Card-container img {
@@ -111,6 +153,10 @@
 
 /* Country Side Page Section */
 
+.Country-section-outer {
+  height: 90vh;
+}
+
 .Country-section {
   height: 60vh;
   width: 90%;
@@ -122,9 +168,7 @@
 }
 
 .Country-section-button {
-  background-color: white;
   padding: 0.2rem 1rem;
-  color: gray;
   border: 0.15rem groove rgba(0, 0, 0, 0.1);
   border-radius: 0.1rem;
 }
@@ -137,7 +181,6 @@
 .Back-button {
   border-radius: 0.3rem;
   padding: 0.4rem 1.5rem;
-  color: black;
 }
 
 .Country-section-container {
@@ -192,4 +235,86 @@
 
 .Country-section-container-inner-bottom button {
   margin-left: 0.3rem;
+}
+
+/*MEIDA QUERIES SECTION */
+
+@media only screen and (min-width: 1675px) {
+  .Home-card-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .Home-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1015px) {
+  .Home-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Country-section {
+    height:fit-content;
+  }
+
+  .Country-section img {
+    height: 50%;
+    width: 50%;
+  }
+
+  .Country-section-container {
+    display: block;
+    width: 100%;
+  }
+
+  .Back-button {
+    margin: 5% 0;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .Home-card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Country-section-outer {
+    height: fit-content;
+  }
+
+  .Country-section img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .Country-section-container-inner {
+    display: block;
+  }
+
+  .Country-section-container-inner-leftlist {
+    margin: 5% 0;
+  }
+
+  .Country-section-container-inner-rightlist {
+    margin: 5% 0;
+  }
+
+  .Border-buttons-span {
+    display: block;
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+  * {
+    font-size: 14px;
+  }
+
+  .Form-select-container {
+    height: 2.75rem;
+    width: 9rem;
+  }
+
 }

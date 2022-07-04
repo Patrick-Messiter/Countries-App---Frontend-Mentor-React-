@@ -17,7 +17,7 @@ function Main (props) {
         props.countryData.map(currentObject => {
             if (currentObject.name.common === id) {
                 props.setChooseCountry(currentObject)
-                props.setToggle(true)
+                props.setToggleSection(true)
             }
         })
     } 
@@ -37,6 +37,7 @@ function Main (props) {
                         key = {currentCountry.name.common}
                         item = {currentCountry}
                         selectCard = {() => selectCard(currentCountry.name.common)}
+                        toggleDarkMode = {props.toggleDarkMode}
                     />
                 )
             }
@@ -49,6 +50,7 @@ function Main (props) {
                         key = {currentCountry.name.common}
                         item = {currentCountry}
                         selectCard = {() => selectCard(currentCountry.name.common)}
+                        toggleDarkMode = {props.toggleDarkMode}
                     />
                 )
             }
@@ -61,6 +63,7 @@ function Main (props) {
                         key = {currentCountry.name.common}
                         item = {currentCountry}
                         selectCard = {() => selectCard(currentCountry.name.common)}
+                        toggleDarkMode = {props.toggleDarkMode}
                     />
                 )
             }
@@ -71,18 +74,20 @@ function Main (props) {
                     key = {currentCountry.name.common}
                     item = {currentCountry}
                     selectCard = {() => selectCard(currentCountry.name.common)}
+                    toggleDarkMode = {props.toggleDarkMode}
                 />
             )
         }
     })
 
     return (
-        <main className='Main-home-section'>
+        <main className= {props.toggleDarkMode ? "DarkMain Main-home-section" : "LightMain Main-home-section"}>
             <div className='Home-outer-container'>
                 <div className='Home-form-container'>
                     <Form 
                         formData = {formData}
                         setFormData = {setFormData}
+                        toggleDarkMode = {props.toggleDarkMode}
                     />
                 </div>
                 <div className='Home-card-container'>

@@ -4,7 +4,7 @@ import {formatPopulation} from './globalFunctions'
 function Card (props) {
     
     return (
-        <div onClick={props.selectCard} className='Card-container'>
+        <div onClick={props.selectCard} className={props.toggleDarkMode ? "DarkMinor Card-container" : "LightMinor Card-container"}>
             <img src={props.item.flags.png} alt={`${props.item.name.common} flag`}/>
             <div className='Card-container-inner'>
                 <h3>{props.item.name.common}</h3>
